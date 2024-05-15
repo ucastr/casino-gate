@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 
 module.exports = {
-  publicPath: "/cg/",
+  publicPath: "",
   configureWebpack: {
     plugins: [
       new webpack.DefinePlugin({

@@ -1,13 +1,16 @@
 <template>
+  <LoginView />
   <LocaleChanger />
   <RouterView />
 </template>
 
 <script>
 import LocaleChanger from "./components/LocaleChanger.vue";
+import LoginView from "./components/LoginView.vue";
 export default {
   name: "App",
   components: {
+    LoginView,
     LocaleChanger,
   },
 };
