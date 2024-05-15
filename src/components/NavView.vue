@@ -203,8 +203,10 @@
       </li>
 
       <li>
-        <router-link to="/" @click.prevent="logout"
-          ><span class="navLinkIcon"
+        <span class="userName">{{ getUsername() }}</span
+        ><br />
+        <router-link to="/" @click.prevent="logout">
+          <span class="navLinkIcon"
             ><svg
               width="24"
               height="25"
@@ -221,6 +223,7 @@
               />
             </svg>
           </span>
+
           <span class="navLinkText">Logout</span></router-link
         >
       </li>
@@ -236,6 +239,7 @@ import {
   IS_USER_AUTHENTICATED,
 } from "../store/storeconstants";
 import { RESET_PERMISSIONS } from "../store/permissions/";
+import { GET_USERNAME } from "../store/storeconstants";
 
 export default {
   name: "NavView",
@@ -261,6 +265,9 @@ export default {
           ? permission[1] === true || permission[1] === null
           : false;
       }
+    },
+    getUsername() {
+      return this.$store.getters[`auth/${GET_USERNAME}`];
     },
   },
 };

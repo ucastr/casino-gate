@@ -15,7 +15,6 @@
   </div>
 </template>
 <script>
-import { GET_USERNAME } from "../store/storeconstants";
 import NavView from "./NavView.vue";
 import HeaderComponent from "./HeaderComponent.vue";
 
@@ -25,7 +24,7 @@ export default {
     return {
       permissions: [],
       breadcrumbs: [
-        { title: "DASHBOARD", link: "/dashboard" },
+        { title: "Dashboard", link: "/dashboard" },
         { title: "Overview", link: "" },
       ],
     };
@@ -34,10 +33,6 @@ export default {
     NavView,
     HeaderComponent,
   },
-  methods: {
-    getUsername() {
-      return this.$store.getters[`auth/${GET_USERNAME}`];
-    },
-  },
+  methods: {},
 };
 </script>

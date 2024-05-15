@@ -171,9 +171,17 @@ export default {
               .request(config)
               .then((response) => {
                 console.log(JSON.stringify(response.data));
-                const permissions = response.data.permissions;
+                //const permissions = response.data.permissions;
+                const permissionsTemp = [
+                  ["dashboard", true],
+                  ["marketplace", true],
+                  ["tournaments", true],
+                ];
                 // Seu componente de login
-                this.$store.commit("permissions/SET_PERMISSIONS", permissions);
+                this.$store.commit(
+                  "permissions/SET_PERMISSIONS",
+                  permissionsTemp
+                );
                 this.$store.commit(`auth/${SET_AUTHENTICATION}`, true);
                 console.log("this.$router.push(/dashboard)");
                 this.$router.push("/dashboard");

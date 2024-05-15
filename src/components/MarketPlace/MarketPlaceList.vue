@@ -1,77 +1,44 @@
 <template>
-  <layout-div>
-    <div class="container">
-      <h2 class="text-center mt-5 mb-3">Project Manager</h2>
-      <div class="card">
-        <div class="card-header">
-          <router-link to="/create" class="btn btn-outline-primary"
-            >Create New Project
-          </router-link>
-        </div>
-        <div class="card-body">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th width="240px">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="project in projects" :key="project.id">
-                <td>{{ project.name }}</td>
-                <td>{{ project.description }}</td>
-                <td>
-                  <router-link
-                    :to="`/show/${project.id}`"
-                    class="btn btn-outline-info mx-1"
-                    >Show</router-link
-                  >
-                  <router-link
-                    :to="`/edit/${project.id}`"
-                    class="btn btn-outline-success mx-1"
-                    >Edit</router-link
-                  >
-                  <button
-                    @click="handleDelete(project.id)"
-                    className="btn btn-outline-danger mx-1"
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </layout-div>
+  <NavView />
+  <div id="MainView">
+    <HeaderComponent :breadcrumbs="breadcrumbs" />
+    <div class="content-block"></div>
+  </div>
 </template>
 
 <script>
+import NavView from "../NavView.vue";
+import HeaderComponent from "../HeaderComponent.vue";
 import axios from "axios";
-import LayoutDiv from "../LayoutDiv.vue";
 import Swal from "sweetalert2";
 
 export default {
   name: "MarketPlaceList",
   components: {
-    LayoutDiv,
+    NavView,
+    HeaderComponent,
   },
   data() {
     return {
       projects: [],
+      breadcrumbs: [
+        { title: "Marketplace", link: "/marketplace" },
+        { title: "All Items", link: "" },
+      ],
     };
   },
   created() {
     this.fetchProjectList();
   },
   methods: {
+    NavView,
+    HeaderComponent,
     fetchProjectList() {
       axios
-        .get("/backoffice/get-features")
+        .get("https://staging.casinogate.pt/backoffice/get-items")
         .then((response) => {
           this.projects = response.data;
+          console.log(response.data);
           return response;
         })
         .catch((error) => {
@@ -90,7 +57,9 @@ export default {
       }).then((result) => {
         if (result.isConfirmed) {
           axios
-            .delete(`/backoffice/delete-feature${id}`)
+            .delete(
+              `https://staging.casinogate.pt/backoffice/delete-feature${id}`
+            )
             .then((response) => {
               Swal.fire({
                 icon: "success",

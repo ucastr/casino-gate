@@ -4,7 +4,7 @@
       <h2 class="text-center mt-5 mb-3">Project Manager</h2>
       <div class="card">
         <div class="card-header">
-          <router-link to="/create" class="btn btn-outline-primary"
+          <router-link to="/add" class="btn btn-outline-primary"
             >Create New Project
           </router-link>
         </div>

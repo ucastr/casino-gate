@@ -22,9 +22,9 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/marketplace/create:id",
-    name: "Marketplace Create",
-    component: () => import("../components/MarketPlace/MarketPlaceCreate.vue"),
+    path: "/marketplace/add:id",
+    name: "Marketplace Add",
+    component: () => import("../components/MarketPlace/MarketPlaceAdd.vue"),
     meta: { requiresAuth: true },
   },
   {
@@ -39,13 +39,31 @@ const routes = [
     component: () => import("../components/MarketPlace/MarketPlaceShow.vue"),
     meta: { requiresAuth: true },
   },
-  /*
   {
     path: "/tournaments",
     name: "Tournaments",
-    component: () => import("../components/Tournaments/TournamentsView.vue"),
+    component: () => import("../components/Tournaments/TournamentsList.vue"),
     meta: { requiresAuth: true },
   },
+  {
+    path: "/tournaments/add:id",
+    name: "Tournaments Add",
+    component: () => import("../components/Tournaments/TournamentsAdd.vue"),
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/tournaments/edit:id",
+    name: "Tournaments Edit",
+    component: () => import("../components/Tournaments/TournamentsEdit.vue"),
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/tournaments/show:id",
+    name: "Tournaments Show",
+    component: () => import("../components/Tournaments/TournamentsShow.vue"),
+    meta: { requiresAuth: true },
+  },
+  /*
   {
     path: "/gamemanager",
     name: "GameManager",
