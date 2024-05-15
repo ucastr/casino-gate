@@ -1,0 +1,17 @@
+{
+    "common": {
+        "comming-soon": "Brevemente Disponível"
+    },
+    "login": {
+        "title": "AQUI PARA MUDAR O JOGO",
+        "description": "O novo jogador na experiência de casinos",
+        "form-title": "BACKOFFICE",
+        "form-sub-title": "ENTRAR",
+        "username": "Username",
+        "usernamePlaceholder": "Insira o seu nome de utilizador",
+        "password": "Password",
+        "passwordPlaceholder": "Insira a sua senha",
+        "rememberMe": "Lembre de mim",
+        "buttonSignIn": "SIGN IN"
+    }
+}

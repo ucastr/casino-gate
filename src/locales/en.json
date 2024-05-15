@@ -1,0 +1,17 @@
+{
+  "common": {
+    "comming-soon": "COMMING SOON"
+  },
+  "login": {
+    "title": "HERE TO CHANGE THE GAME",
+    "description": "The new palyer in casino experiences",
+    "form-title": "BACKOFFICE",
+    "form-sub-title": "SIGN IN",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "buttonSignIn": "SIGN IN"
+  }
+}
